@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: streams-exception-demo
+  kafka:
+    streams:
+      application-id: streams-exception-demo
+      bootstrap-servers: localhost:9092
+    properties:
+      default.key.serde: 'org.apache.kafka.common.serialization.Serdes$StringSerde'
+      default.value.serde: 'org.apache.kafka.common.serialization.Serdes$StringSerde'
+      default.deserialization.exception.handler: space.zeinab.demo.kafka.exceptionHandler.CustomDeserializationExceptionHandler
+      default.production.exception.handler: space.zeinab.demo.kafka.exceptionHandler.CustomProductionExceptionHandler
